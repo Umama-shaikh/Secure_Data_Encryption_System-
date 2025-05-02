@@ -142,7 +142,7 @@ elif choice == "Retrieve Data":
         st.warning("Please log in first.")
     else:
         st.subheader("🔍 Retrieve Data")
-        user_data = stored_data(st.session_state.authenticated_user, {}).get("data", [])
+        user_data = stored_data.get(st.session_state.authenticated_user, {}).get("data", [])
 
         if not user_data:
             st.info("No data found for the user.")
